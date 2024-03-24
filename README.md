@@ -197,6 +197,9 @@ The provided code uses the face_recognition library with OpenCV to generate face
 Result and Discussion
 
 
+![WhatsApp Image 2024-01-20 at 01 29 27_cdb091a5](https://github.com/NubeAnurag/person-reidentification/assets/164723012/cde53c27-e479-4377-a99d-d87a6d8298c6)
+
+
 1. Optional libraries:
 • The face_recognition library is a high-quality wrapper to the Dlib library, making it easier to use. However, Dlib can be resource intensive and may not be the most efficient way to detect real face time on some systems. Consideration of other libraries, such as OpenCV’s DNN module with pre-trained face recognition models, can provide better performance.
 2. Face recognition debate:
