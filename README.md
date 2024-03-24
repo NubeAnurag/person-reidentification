@@ -3,11 +3,10 @@ Person re-identification (re-ID) is a computer vision task that involves identif
 
 
 
-
-Mini Project Report on
+# Mini Project Report on
  
 
-PERSON RE-IDENTIFICATION IN VIDEOS
+# PERSON RE-IDENTIFICATION IN VIDEOS
  
 
 Submitted in partial fulfilment of the requirement for the award of the degree of
@@ -26,9 +25,7 @@ Student Name :Anurag MandalUniversity Roll No. : 2021573
 
 
 
-Under the Mentorship of 
-Dr Manoj diwakar
-Asst Professor 
+
 
 
 
@@ -50,8 +47,7 @@ December-2023
 CANDIDATE’S DECLARATION 
 
 
-I hereby certify that the work which is being presented in the project report entitled “PERSON RE IDENTIFICATION IN VIDEOS” in partial fulfillment of the requirements for the award of the Degree of Bachelor of Technology in Computer Science and Engineeringof the Graphic Era (Deemed to be University), Dehradun shall be carried out by the under the mentorship of Dr Manoj diwakar ,
-Asst Professor, Department of Computer Science and Engineering, Graphic Era (Deemed to be University), Dehradun. 
+I hereby certify that the work which is being presented in the project report entitled “PERSON RE IDENTIFICATION IN VIDEOS” in partial fulfillment of the requirements for the award of the Degree of Bachelor of Technology in Computer Science and Engineeringof the Graphic Era (Deemed to be University), Dehradun 
 
 	
 
@@ -99,7 +95,7 @@ Table of Contents
 
 
  
-Chapter 1 
+# Chapter 1 
 Introduction
 
 1)Definition
@@ -135,7 +131,7 @@ Deep Learning Integration: Integration of deep learning architectures, which inc
 
 
 
-       Chapter 2
+# Chapter 2
 Literature Survey
 1)Traditional methods:
 Early approaches to human ReID typically rely on artifacts, such as color histograms and texture patterns. These methods have struggled with scalability and robustness in real-world settings due to their inability to capture the complex relationships between individuals across locations
@@ -161,7 +157,7 @@ To increase the discriminatory power of human ReID systems, researchers are incr
 
 
 
-    Chapter 3 
+# Chapter 3 
 Methodology
 
 The provided code uses the face_recognition library with OpenCV to generate face recognition and predicted names and ages of individuals in a live video stream Here is a point-by-point breakdown of the methods used is.
@@ -197,7 +193,7 @@ The provided code uses the face_recognition library with OpenCV to generate face
 
 
 
-     Chapter 4 
+# Chapter 4 
 Result and Discussion
 
 
@@ -223,7 +219,7 @@ Result and Discussion
 
 
 
-    Chapter5
+# Chapter5
 Conclusion and Future Work
 
 conclusion:
