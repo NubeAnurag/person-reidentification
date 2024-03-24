@@ -1,0 +1,76 @@
+import cv2
+import face_recognition
+
+# Load images of faces
+your_image_path = r"C:\Users\CB Chakrata\OneDrive\Desktop\mandal1.jpg"
+friend1_image_path = r"C:\Users\CB Chakrata\OneDrive\Desktop\rn mandal.jpg"  # Replace with the actual path
+friend2_image_path = r"C:\Users\CB Chakrata\OneDrive\Desktop\manya.jpg"  # Replace with the actual path
+
+your_image = face_recognition.load_image_file(your_image_path)
+friend1_image = face_recognition.load_image_file(friend1_image_path)
+friend2_image = face_recognition.load_image_file(friend2_image_path)
+
+# Obtain face encodings
+your_encoding = face_recognition.face_encodings(your_image)[0]
+friend1_encoding = face_recognition.face_encodings(friend1_image)[0]
+friend2_encoding = face_recognition.face_encodings(friend2_image)[0]
+
+# Set up the video capture
+video_cap = cv2.VideoCapture(0)
+
+# Variable to track if face recognition is active
+recognize_faces = False
+
+while True:
+    # Read a frame from the camera
+    ret, frame = video_cap.read()
+
+    # Check if face recognition is active
+    if recognize_faces:
+        # Find all face locations in the current frame
+        face_locations = face_recognition.face_locations(frame)
+        
+        for face_location in face_locations:
+            # Encode the face in the current frame
+            current_encoding = face_recognition.face_encodings(frame, [face_location])[0]
+
+            # Compare face encodings
+            if face_recognition.compare_faces([your_encoding, friend1_encoding, friend2_encoding], current_encoding)[0]:
+                label = 'ANURAG MANDAL'
+                age = 20  # Replace with the actual age
+            elif face_recognition.compare_faces([your_encoding, friend1_encoding, friend2_encoding], current_encoding)[1]:
+                label = 'RN MANDAL'
+                age = 50  # Replace with the actual age
+            elif face_recognition.compare_faces([your_encoding, friend1_encoding, friend2_encoding], current_encoding)[2]:
+                label = 'MANYA'
+                age = 21  # Replace with the actual age
+            else:
+                label = 'UNKNOWN'
+                age = None
+
+            # Draw a box around the face
+            top, right, bottom, left = face_location
+            cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 0), 2)
+
+            # Display the person's name
+            cv2.putText(frame, label, (left, top - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+
+            # Display the predicted age
+            if age is not None:
+                cv2.putText(frame, f'Age: {age}', (left, top + 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+
+    # Display the frame
+    cv2.imshow('Face Detection', frame)
+
+    # Check for the 'a' key to exit
+    key = cv2.waitKey(1) & 0xFF
+    if key == ord('a'):
+        break
+    elif key == ord('q'):
+        recognize_faces = True
+    elif key == ord('w'):
+        recognize_faces = False
+
+# Release the video capture and close all OpenCV windows
+video_cap.release()
+cv2.destroyAllWindows()
